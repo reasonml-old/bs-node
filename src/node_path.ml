@@ -23,14 +23,12 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. *)
 
 external basename : string -> string = "" [@@bs.module "path"]
-external basename_ext : string -> string -> string  =
+external basename_ext : path:string -> ext:string -> string  =
   "basename" [@@bs.module "path"]
 
 external delimiter : string = "" [@@bs.module "path"]
 
 external dirname : string -> string = "" [@@bs.module "path"]
-
-external dirname_ext : string -> string -> string = "dirname" [@@bs.module "path"]
 
 type pathObject =
   [%bs.obj: <
@@ -61,8 +59,7 @@ external parse : string -> pathObject = "" [@@bs.module "path"]
 external relative : from:string -> to_:string -> unit -> string =
   "" [@@bs.module "path"]
 
-(* TODO: improve after rest calling convention *)
-external resolve : string -> string -> string = "" [@@bs.module "path"]
+external resolve : string array -> string = "" [@@bs.module "path"] [@@bs.splice]
 
 external sep : string = "" [@@bs.module "path"]
 
