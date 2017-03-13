@@ -22,6 +22,26 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. *)
 
+type t = <
+  id : string ;
+  exports : Node_exports.t ;
+  parent : t Js.null_undefined;
+  (* in REPL V4 it is [undefined]
+    in CLI it can be [null]
+  *)
+
+  filename : string ;
+
+  loaded : Js.boolean;
+  children : t array ;
+  paths : string array;
+> Js.t
+(** WARN:
+    its path name should not be changed
+    see {!Ppx_entry}
+*)
+
+
 external module_ :
-  < __cache : Node_types.node_module Js_dict.t  > Js.t
+  < __cache : t Js_dict.t  > Js.t
     = "module" [@@bs.val]
