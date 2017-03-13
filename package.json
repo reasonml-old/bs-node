@@ -7,12 +7,11 @@
         "build": "bsb -make-world",
         "test": "npm run build && jest",
         "watch:bsb": "bsb -make-world -w",
-        "watch:jest": "jest --watchAll",
-        "watch:screen": "screen -c .screenrc"
+        "watch:jest": "jest --watchAll"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/BuckleTypes/bs-jest.git"
+        "url": "git+https://github.com/BuckleTypes/bs-node.git"
     },
     "keywords": [
         "node",
