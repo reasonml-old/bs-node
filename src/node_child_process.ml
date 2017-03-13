@@ -22,9 +22,9 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. *)
 
-type option 
+type options
 
-external option : ?cwd:string -> ?encoding:string -> unit -> option = "" [@@bs.obj]
+external options : ?cwd:string -> ?encoding:string -> unit -> options = "" [@@bs.obj]
 
 (* TODO: when no option it would return buffer  *)
-external execSync : string -> option -> string = "" [@@bs.module "child_process"]
+external execSync : string -> options -> string = "" [@@bs.module "child_process"]

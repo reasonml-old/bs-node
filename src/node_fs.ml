@@ -129,5 +129,5 @@ external readFileAsUtf8Sync :
   string = "readFileSync"
 [@@bs.val] [@@bs.module "fs"]  
 
-external existsSync : string -> Js.boolean = ""
+external existsSync : string -> bool = ""
 [@@bs.val] [@@bs.module "fs"]  
