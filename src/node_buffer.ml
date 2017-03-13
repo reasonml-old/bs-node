@@ -23,7 +23,7 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. *)
 
 
-type t
+type t = Node_types.buffer
 
 external isBuffer : 'a -> bool = "Buffer.isBuffer"
 [@@bs.val]

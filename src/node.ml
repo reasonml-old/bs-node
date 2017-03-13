@@ -34,13 +34,15 @@ module Module =  Node_module
 module Buffer = Node_buffer
 module Child_process = Node_child_process
 
-type _ string_buffer_kind =
+open Node_types
+
+type _ string_buffer_kind = 
   | String :  string string_buffer_kind
-  | Buffer :  Node_buffer.t string_buffer_kind
+  | Buffer :  buffer string_buffer_kind
 
 
 (** We except a good inliner will eliminate such boxing in the future *)
-let test (type t) (x : Node_string_buffer.t) : (t string_buffer_kind * t)=
+let test (type t) (x : string_buffer) : (t string_buffer_kind * t)= 
   if Js.typeof x = "string" then 
     (Obj.magic String : t string_buffer_kind),  (Obj.magic x : t)
   else 
