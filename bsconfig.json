@@ -8,7 +8,6 @@
             "type": "dev"
         }
     ],
-    "bs-dependencies": [
-        "bs-jest"
-    ]
+    "bs-dev-dependencies": ["bs-jest"],
+    "bsc-flags": ["-bs-no-version-header"]
 }
