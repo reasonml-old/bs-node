@@ -162,98 +162,76 @@ external lastIndexOfIntFrom : t -> value:int -> offset:int -> int =
 external length : t -> int = "" [@@bs.get]
 
 external readDoubleBigEndian : t -> offset:int -> float = "" [@@bs.send]
-external readDoubleBigEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readDoubleBigEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readDoubleBE" [@@bs.send]
-let readDoubleBigEndianNoAssert buffer ~offset = readDoubleBigEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readDoubleLittleEndian : t -> offset:int -> float = "" [@@bs.send]
-external readDoubleLittleEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readDoubleLittleEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readDoubleLE" [@@bs.send]
-let readDoubleLittleEndianNoAssert buffer ~offset = readDoubleLittleEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readFloatBigEndian : t -> offset:int -> float = "" [@@bs.send]
-external readFloatBigEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readFloatBigEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readFloatBE" [@@bs.send]
-let readFloatBigEndianNoAssert buffer ~offset = readFloatBigEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readFloatLittleEndian : t -> offset:int -> float = "" [@@bs.send]
-external readFloatLittleEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readFloatLittleEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readFloatLE" [@@bs.send]
-let readFloatLittleEndianNoAssert buffer ~offset = readFloatLittleEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readInt8 : t -> offset:int -> float = "" [@@bs.send]
-external readInt8NoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readInt8NoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readInt8" [@@bs.send]
-let readInt8NoAssert buffer ~offset = readInt8NoAssert buffer ~offset ~noAssert:Js.true_
 
 external readInt16BigEndian : t -> offset:int -> float = "" [@@bs.send]
-external readInt16BigEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readInt16BigEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readInt16BE" [@@bs.send]
-let readInt16BigEndianNoAssert buffer ~offset = readInt16BigEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readInt16LittleEndian : t -> offset:int -> float = "" [@@bs.send]
-external readInt16LittleEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readInt16LittleEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readInt16LE" [@@bs.send]
-let readInt16LittleEndianNoAssert buffer ~offset = readInt16LittleEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readInt32BigEndian : t -> offset:int -> float = "" [@@bs.send]
-external readInt32BigEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readInt32BigEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readInt32BE" [@@bs.send]
-let readInt32BigEndianNoAssert buffer ~offset = readInt32BigEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readInt32LittleEndian : t -> offset:int -> float = "" [@@bs.send]
-external readInt32LittleEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readInt32LittleEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readInt32LE" [@@bs.send]
-let readInt32LittleEndianNoAssert buffer ~offset = readInt32LittleEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readIntBigEndian : t -> offset:int -> length:int -> float = "" [@@bs.send]
-external readIntBigEndianNoAssert : t -> offset:int -> length:int -> noAssert:Js.boolean ->
+external readIntBigEndianNoAssert : t -> offset:int -> length:int -> (_ [@bs.as {json|true|json}]) ->
   float = "readIntBE" [@@bs.send]
-let readIntBigEndianNoAssert buffer ~offset ~length = readIntBigEndianNoAssert buffer ~offset
-  ~length ~noAssert:Js.true_
 
 external readIntLittleEndian : t -> offset:int -> length:int -> float = "" [@@bs.send]
-external readIntLittleEndianNoAssert : t -> offset:int -> length:int -> noAssert:Js.boolean ->
+external readIntLittleEndianNoAssert : t -> offset:int -> length:int -> (_ [@bs.as {json|true|json}]) ->
   float = "readIntLE" [@@bs.send]
-let readIntLittleEndianNoAssert buffer ~offset ~length = readIntLittleEndianNoAssert buffer ~offset
-  ~length ~noAssert:Js.true_
 
 external readUint8 : t -> offset:int -> float = "" [@@bs.send]
-external readUint8NoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readUint8NoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readUint8" [@@bs.send]
-let readUint8NoAssert buffer ~offset = readUint8NoAssert buffer ~offset ~noAssert:Js.true_
 
 external readUint16BigEndian : t -> offset:int -> float = "" [@@bs.send]
-external readUint16BigEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readUint16BigEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readUint16BE" [@@bs.send]
-let readUint16BigEndianNoAssert buffer ~offset = readUint16BigEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readUint16LittleEndian : t -> offset:int -> float = "" [@@bs.send]
-external readUint16LittleEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readUint16LittleEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readUint16LE" [@@bs.send]
-let readUint16LittleEndianNoAssert buffer ~offset = readUint16LittleEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readUint32BigEndian : t -> offset:int -> float = "" [@@bs.send]
-external readUint32BigEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readUint32BigEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readUint32BE" [@@bs.send]
-let readUint32BigEndianNoAssert buffer ~offset = readUint32BigEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readUint32LittleEndian : t -> offset:int -> float = "" [@@bs.send]
-external readUint32LittleEndianNoAssert : t -> offset:int -> noAssert:Js.boolean -> float =
+external readUint32LittleEndianNoAssert : t -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "readUint32LE" [@@bs.send]
-let readUint32LittleEndianNoAssert buffer ~offset = readUint32LittleEndianNoAssert buffer ~offset ~noAssert:Js.true_
 
 external readUintBigEndian : t -> offset:int -> length:int -> float = "" [@@bs.send]
-external readUintBigEndianNoAssert : t -> offset:int -> length:int -> noAssert:Js.boolean ->
+external readUintBigEndianNoAssert : t -> offset:int -> length:int -> (_ [@bs.as {json|true|json}]) ->
   float = "readUintBE" [@@bs.send]
-let readUintBigEndianNoAssert buffer ~offset ~length = readUintBigEndianNoAssert buffer ~offset
-  ~length ~noAssert:Js.true_
 
 external readUintLittleEndian : t -> offset:int -> length:int -> float = "" [@@bs.send]
-external readUintLittleEndianNoAssert : t -> offset:int -> length:int -> noAssert:Js.boolean ->
+external readUintLittleEndianNoAssert : t -> offset:int -> length:int -> (_ [@bs.as {json|true|json}]) ->
   float = "readUintLE" [@@bs.send]
-let readUintLittleEndianNoAssert buffer ~offset ~length = readUintLittleEndianNoAssert buffer ~offset
-  ~length ~noAssert:Js.true_
 
 external slice : t -> t = "" [@@bs.send]
 external sliceOffset : t -> start:int -> t = "slice" [@@bs.send]
@@ -285,98 +263,76 @@ external writeRangeWithEncoding : t -> value:Js.String.t -> offset:int ->
   length:int -> encoding:Js.String.t -> int = "write" [@@bs.send]
 
 external writeDoubleBigEndian : t -> value:float -> offset:int -> float = "" [@@bs.send]
-external writeDoubleBigEndianNoAssert : t -> value:float -> offset:int -> noAssert:Js.boolean -> float =
+external writeDoubleBigEndianNoAssert : t -> value:float -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeDoubleBE" [@@bs.send]
-let writeDoubleBigEndianNoAssert buffer ~value ~offset = writeDoubleBigEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeDoubleLittleEndian : t -> value:float -> offset:int -> float = "" [@@bs.send]
-external writeDoubleLittleEndianNoAssert : t -> value:float -> offset:int -> noAssert:Js.boolean -> float =
+external writeDoubleLittleEndianNoAssert : t -> value:float -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeDoubleLE" [@@bs.send]
-let writeDoubleLittleEndianNoAssert buffer ~value ~offset = writeDoubleLittleEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeFloatBigEndian : t -> value:float -> offset:int -> float = "" [@@bs.send]
-external writeFloatBigEndianNoAssert : t -> value:float -> offset:int -> noAssert:Js.boolean -> float =
+external writeFloatBigEndianNoAssert : t -> value:float -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeFloatBE" [@@bs.send]
-let writeFloatBigEndianNoAssert buffer ~value ~offset = writeFloatBigEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeFloatLittleEndian : t -> value:float -> offset:int -> float = "" [@@bs.send]
-external writeFloatLittleEndianNoAssert : t -> value:float -> offset:int -> noAssert:Js.boolean -> float =
+external writeFloatLittleEndianNoAssert : t -> value:float -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeFloatLE" [@@bs.send]
-let writeFloatLittleEndianNoAssert buffer ~value ~offset = writeFloatLittleEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeInt8 : t -> value:int -> offset:int -> float = "" [@@bs.send]
-external writeInt8NoAssert : t -> value:int -> offset:int -> noAssert:Js.boolean -> float =
+external writeInt8NoAssert : t -> value:int -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeInt8" [@@bs.send]
-let writeInt8NoAssert buffer ~value ~offset = writeInt8NoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeInt16BigEndian : t -> value:int -> offset:int -> float = "" [@@bs.send]
-external writeInt16BigEndianNoAssert : t -> value:int -> offset:int -> noAssert:Js.boolean -> float =
+external writeInt16BigEndianNoAssert : t -> value:int -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeInt16BE" [@@bs.send]
-let writeInt16BigEndianNoAssert buffer ~value ~offset = writeInt16BigEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeInt16LittleEndian : t -> value:int -> offset:int -> float = "" [@@bs.send]
-external writeInt16LittleEndianNoAssert : t -> value:int -> offset:int -> noAssert:Js.boolean -> float =
+external writeInt16LittleEndianNoAssert : t -> value:int -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeInt16LE" [@@bs.send]
-let writeInt16LittleEndianNoAssert buffer ~value ~offset = writeInt16LittleEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeInt32BigEndian : t -> value:int -> offset:int -> float = "" [@@bs.send]
-external writeInt32BigEndianNoAssert : t -> value:int -> offset:int -> noAssert:Js.boolean -> float =
+external writeInt32BigEndianNoAssert : t -> value:int -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeInt32BE" [@@bs.send]
-let writeInt32BigEndianNoAssert buffer ~value ~offset = writeInt32BigEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeInt32LittleEndian : t -> value:int -> offset:int -> float = "" [@@bs.send]
-external writeInt32LittleEndianNoAssert : t -> value:int -> offset:int -> noAssert:Js.boolean -> float =
+external writeInt32LittleEndianNoAssert : t -> value:int -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeInt32LE" [@@bs.send]
-let writeInt32LittleEndianNoAssert buffer ~value ~offset = writeInt32LittleEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeIntBigEndian : t -> value:int -> offset:int -> length:int -> float = "" [@@bs.send]
-external writeIntBigEndianNoAssert : t -> value:int -> offset:int -> length:int -> noAssert:Js.boolean ->
+external writeIntBigEndianNoAssert : t -> value:int -> offset:int -> length:int -> (_ [@bs.as {json|true|json}]) ->
   float = "writeIntBE" [@@bs.send]
-let writeIntBigEndianNoAssert buffer ~value ~offset ~length = writeIntBigEndianNoAssert buffer ~value ~offset
-  ~length ~noAssert:Js.true_
 
 external writeIntLittleEndian : t -> value:int -> offset:int -> length:int -> float = "" [@@bs.send]
-external writeIntLittleEndianNoAssert : t -> value:int -> offset:int -> length:int -> noAssert:Js.boolean ->
+external writeIntLittleEndianNoAssert : t -> value:int -> offset:int -> length:int -> (_ [@bs.as {json|true|json}]) ->
   float = "writeIntLE" [@@bs.send]
-let writeIntLittleEndianNoAssert buffer ~value ~offset ~length = writeIntLittleEndianNoAssert buffer ~value ~offset
-  ~length ~noAssert:Js.true_
 
 external writeUint8 : t -> value:int -> offset:int -> float = "" [@@bs.send]
-external writeUint8NoAssert : t -> value:int -> offset:int -> noAssert:Js.boolean -> float =
+external writeUint8NoAssert : t -> value:int -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeUint8" [@@bs.send]
-let writeUint8NoAssert buffer ~value ~offset = writeUint8NoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeUint16BigEndian : t -> value:int -> offset:int -> float = "" [@@bs.send]
-external writeUint16BigEndianNoAssert : t -> value:int -> offset:int -> noAssert:Js.boolean -> float =
+external writeUint16BigEndianNoAssert : t -> value:int -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeUint16BE" [@@bs.send]
-let writeUint16BigEndianNoAssert buffer ~value ~offset = writeUint16BigEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeUint16LittleEndian : t -> value:int -> offset:int -> float = "" [@@bs.send]
-external writeUint16LittleEndianNoAssert : t -> value:int -> offset:int -> noAssert:Js.boolean -> float =
+external writeUint16LittleEndianNoAssert : t -> value:int -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeUint16LE" [@@bs.send]
-let writeUint16LittleEndianNoAssert buffer ~value ~offset = writeUint16LittleEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeUint32BigEndian : t -> value:int -> offset:int -> float = "" [@@bs.send]
-external writeUint32BigEndianNoAssert : t -> value:int -> offset:int -> noAssert:Js.boolean -> float =
+external writeUint32BigEndianNoAssert : t -> value:int -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeUint32BE" [@@bs.send]
-let writeUint32BigEndianNoAssert buffer ~value ~offset = writeUint32BigEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeUint32LittleEndian : t -> value:int -> offset:int -> float = "" [@@bs.send]
-external writeUint32LittleEndianNoAssert : t -> value:int -> offset:int -> noAssert:Js.boolean -> float =
+external writeUint32LittleEndianNoAssert : t -> value:int -> offset:int -> (_ [@bs.as {json|true|json}]) -> float =
   "writeUint32LE" [@@bs.send]
-let writeUint32LittleEndianNoAssert buffer ~value ~offset = writeUint32LittleEndianNoAssert buffer ~value ~offset ~noAssert:Js.true_
 
 external writeUintBigEndian : t -> value:int -> offset:int -> length:int -> float = "" [@@bs.send]
-external writeUintBigEndianNoAssert : t -> value:int -> offset:int -> length:int -> noAssert:Js.boolean ->
+external writeUintBigEndianNoAssert : t -> value:int -> offset:int -> length:int -> (_ [@bs.as {json|true|json}]) ->
   float = "writeUintBE" [@@bs.send]
-let writeUintBigEndianNoAssert buffer ~value ~offset ~length = writeUintBigEndianNoAssert buffer ~value ~offset
-  ~length ~noAssert:Js.true_
 
 external writeUintLittleEndian : t -> value:int -> offset:int -> length:int -> float = "" [@@bs.send]
-external writeUintLittleEndianNoAssert : t -> value:int -> offset:int -> length:int -> noAssert:Js.boolean ->
+external writeUintLittleEndianNoAssert : t -> value:int -> offset:int -> length:int -> (_ [@bs.as {json|true|json}]) ->
   float = "writeUintLE" [@@bs.send]
-let writeUintLittleEndianNoAssert buffer ~value ~offset ~length = writeUintLittleEndianNoAssert buffer ~value ~offset
-  ~length ~noAssert:Js.true_
 
 external _INSPECT_MAX_BYTES : t -> int = "INSPECT_MAX_BYTES" [@@bs.get]
 external kMaxLength : t -> int = "" [@@bs.get]
