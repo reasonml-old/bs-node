@@ -131,3 +131,6 @@ external readFileAsUtf8Sync :
 
 external existsSync : string -> bool = ""
 [@@bs.val] [@@bs.module "fs"]  
+
+external writeFileSync : filename:string -> text:string -> unit = ""
+[@@bs.val] [@@bs.module "fs"]  
