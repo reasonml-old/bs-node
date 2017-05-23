@@ -134,3 +134,5 @@ external existsSync : string -> bool = ""
 
 external writeFileSync : filename:string -> text:string -> unit = ""
 [@@bs.val] [@@bs.module "fs"]  
+
+external mkdirSync : string -> unit = "" [@@bs.val] [@@bs.module "fs"]
