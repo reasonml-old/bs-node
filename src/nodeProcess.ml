@@ -33,3 +33,5 @@ type t =
   >   Js.t
   
 external process : t = "" [@@bs.module]
+
+external argv : string array = "" [@@bs.val] [@@bs.module "process"]
