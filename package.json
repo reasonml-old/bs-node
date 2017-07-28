@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/BuckleTypes/bs-node.git"
+        "url": "git+https://github.com/reasonml-community/bs-node.git"
     },
     "keywords": [
         "node",
@@ -20,12 +20,12 @@
     "author": "",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/BuckleTypes/bs-node/issues"
+        "url": "https://github.com/reasonml-community/bs-node/issues"
     },
-    "homepage": "https://github.com/BuckleTypes/bs-node#readme",
+    "homepage": "https://github.com/reasonml-community/bs-node#readme",
     "devDependencies": {
         "bs-platform": "^1.8.2",
-        "bs-jest": "BuckleTypes/bs-jest"
+        "bs-jest": "reasonml-community/bs-jest"
     },
     "dependencies": {}
 }
