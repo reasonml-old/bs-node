@@ -1,13 +1,14 @@
 {
-    "name": "bs-node",
-    "sources": [{
-            "dir": "src"
-        },
-        {
-            "dir": "__tests__",
-            "type": "dev"
-        }
-    ],
-    "bs-dev-dependencies": ["bs-jest"],
-    "bsc-flags": ["-bs-no-version-header"]
+  "name": "bs-node",
+  "bsc-flags": ["-bs-no-version-header", "-bs-super-errors"],
+  "sources": [
+    {
+      "dir": "src"
+    },
+    {
+      "dir": "__tests__",
+      "type": "dev"
+    }
+  ],
+  "bs-dev-dependencies": ["bs-jest"]
 }

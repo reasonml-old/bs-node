@@ -1,31 +1,31 @@
 {
-    "name": "bs-node",
-    "version": "0.0.1",
-    "description": "BuckleScript bindings to the Node.js API",
-    "scripts": {
-        "start": "bsb -make-world -w",
-        "build": "bsb -make-world",
-        "test": "npm run build && jest",
-        "watch:bsb": "bsb -make-world -w",
-        "watch:jest": "jest --watchAll"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/reasonml-community/bs-node.git"
-    },
-    "keywords": [
-        "node",
-        "bucklescript"
-    ],
-    "author": "",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/reasonml-community/bs-node/issues"
-    },
-    "homepage": "https://github.com/reasonml-community/bs-node#readme",
-    "devDependencies": {
-        "bs-platform": "^1.8.2",
-        "bs-jest": "reasonml-community/bs-jest"
-    },
-    "dependencies": {}
+  "name": "bs-node",
+  "version": "0.0.1",
+  "description": "BuckleScript bindings to the Node.js API",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "test": "npm run build && jest",
+    "watch:jest": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reasonml-community/bs-node.git"
+  },
+  "keywords": [
+    "node",
+    "bucklescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reasonml-community/bs-node/issues"
+  },
+  "homepage": "https://github.com/reasonml-community/bs-node#readme",
+  "devDependencies": {
+    "bs-platform": "^1.9.0",
+    "bs-jest": "reasonml-community/bs-jest"
+  },
+  "dependencies": {}
 }
