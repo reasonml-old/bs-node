@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/reasonml-community/bs-node#readme",
   "devDependencies": {
-    "bs-jest": "reasonml-community/bs-jest",
+    "@glennsl/bs-jest": "^0.4.2",
     "bs-platform": "^2.2.3"
   },
   "dependencies": {}
