@@ -31,3 +31,4 @@ module Options = NodeOptions
 module Path = NodePath
 module Process = NodeProcess
 module StringBuffer = NodeStringBuffer
+module Crypto = NodeCrypto
