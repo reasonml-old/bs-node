@@ -16,6 +16,12 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
+"@glennsl/bs-jest@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@glennsl/bs-jest/-/bs-jest-0.4.2.tgz#c8bd899aca0feae5927f4778cbdeb4c46bb2eef9"
+  dependencies:
+    jest "^22.0.4"
+
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -434,15 +440,9 @@ browser-resolve@^1.11.2:
   dependencies:
     resolve "1.1.7"
 
-bs-jest@reasonml-community/bs-jest:
-  version "0.4.2"
-  resolved "https://codeload.github.com/reasonml-community/bs-jest/tar.gz/01a1f2c7f08e9b822f0aa611e3cb892f7e8c0590"
-  dependencies:
-    jest "^22.0.4"
-
-bs-platform@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-2.2.3.tgz#d905ae10a5f3621e6a739041dfa0b58483a2174f"
+bs-platform@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-3.0.0.tgz#38f200730db52fdea37819376b6ac3dfb20244c0"
 
 bser@^2.0.0:
   version "2.0.0"

@@ -1,5 +1,5 @@
 (* Copyright (C) 2015-2016 Bloomberg Finance L.P.
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -17,7 +17,7 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. *)
@@ -30,58 +30,59 @@
 *)
 external readdirSync : string -> string array  = "" [@@bs.module "fs"]
 
-external renameSync : string -> string = "" [@@bs.module "fs"]    
+external renameSync : string -> string = "" [@@bs.module "fs"]
 
-type fd = private int 
+type fd = private int
 
 type path = string
 (**
    The relative path to a filename can be used. Remember, however, that this path
    will be relative to [process.cwd()].
-*)  
+*)
 
-module Watch = struct 
+module Watch = struct
   type t
-  type config 
+  type config
   external config :
-    ?persistent:Js.boolean ->
-    ?recursive:Js.boolean -> 
-    ?encoding: Js_string.t -> 
-    unit -> config = 
+    ?persistent:bool ->
+    ?recursive:bool ->
+    ?encoding: Js_string.t ->
+    unit -> config =
     "" [@@bs.obj]
 
   external watch :
-    string -> 
-    ?config:config -> 
-    unit -> 
-    t = "" 
+    string ->
+    ?config:config ->
+    unit ->
+    t = ""
   [@@bs.module "fs"]
-  (** there is no need to accept listener, since we return a [watcher] 
+  (** there is no need to accept listener, since we return a [watcher]
       back it can register event listener there .
       Currently we introduce a type [stringBuffer], for the
-      [filename], it will be [Buffer] when the encoding is `utf8. 
-      This is dependent type which can be tracked by GADT in some way, 
+      [filename], it will be [Buffer] when the encoding is `utf8.
+      This is dependent type which can be tracked by GADT in some way,
       but to make things simple, let's just introduce an or type
   *)
   external on :
-    ([
-      `change of (string (*eventType*) -> NodeStringBuffer.t (* filename *) -> unit  [@bs])
-    | `error of (unit -> unit [@bs])
-    ] [@bs.string]
-    ) -> t = "" 
-  [@@bs.send.pipe: t]
+    t
+    -> ([
+        | `change of (string (*eventType*) -> NodeStringBuffer.t (* filename *) -> unit  [@bs])
+        | `error of (unit -> unit [@bs])
+        ] [@bs.string])
+    -> t = ""
+  [@@bs.send]
 
 
-  external close : unit -> unit = "" [@@bs.send.pipe:t]
+  external close : t -> unit -> unit = "" [@@bs.send]
 end
 
-external ftruncateSync : fd -> int -> unit = "" [@@bs.module "fs"]    
+external ftruncateSync : fd -> int -> unit = "" [@@bs.module "fs"]
 
-external truncateSync : string -> int -> unit = "" [@@bs.module "fs"]    
+external truncateSync : string -> int -> unit = "" [@@bs.module "fs"]
 
-external chownSync : string -> uid:int -> gid:int -> unit = "" [@@bs.module "fs"]    
+external chownSync : string -> uid:int -> gid:int -> unit = "" [@@bs.module "fs"]
 
-external fchownSync : fd -> uid:int -> gid:int -> unit = "" [@@bs.module "fs"]    
+external fchownSync : fd -> uid:int -> gid:int -> unit = "" [@@bs.module "fs"]
 
 external readlinkSync : string -> string  = "" [@@bs.module "fs"]
 
@@ -90,7 +91,7 @@ external unlinkSync : string -> unit  = "" [@@bs.module "fs"]
 external rmdirSync : string -> unit = ""  [@@bs.module "fs"]
 
 (* TODO: [flags] support *)
-external openSync : 
+external openSync :
   path ->
   (
     [ `Read [@bs.as "r"]
@@ -108,31 +109,31 @@ external openSync :
   unit = ""  [@@bs.module "fs"]
 
 
-external readFileSync : 
+external readFileSync :
   string ->
-  ( 
+  (
     [
       `hex
     | `utf8
-    | `ascii 
+    | `ascii
     | `latin1
-    | `base64 
+    | `base64
     | `ucs2
     | `base64
-    | `binary 
+    | `binary
     | `utf16le ][@bs.string]) ->
-  string = "readFileSync" 
+  string = "readFileSync"
 [@@bs.val] [@@bs.module "fs"]
 
-external readFileAsUtf8Sync : 
-  string -> (_[@bs.as "utf8"]) -> 
+external readFileAsUtf8Sync :
+  string -> (_[@bs.as "utf8"]) ->
   string = "readFileSync"
-[@@bs.val] [@@bs.module "fs"]  
+[@@bs.val] [@@bs.module "fs"]
 
 external existsSync : string -> bool = ""
-[@@bs.val] [@@bs.module "fs"]  
+[@@bs.val] [@@bs.module "fs"]
 
 external writeFileSync : filename:string -> text:string -> unit = ""
-[@@bs.val] [@@bs.module "fs"]  
+[@@bs.val] [@@bs.module "fs"]
 
 external mkdirSync : string -> unit = "" [@@bs.val] [@@bs.module "fs"]
