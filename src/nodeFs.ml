@@ -84,6 +84,8 @@ external chownSync : string -> uid:int -> gid:int -> unit = "" [@@bs.module "fs"
 
 external fchownSync : fd -> uid:int -> gid:int -> unit = "" [@@bs.module "fs"]
 
+external fchmodSync : fd -> uid:int -> unit = "" [@@bs.module "fs"]
+
 external readlinkSync : string -> string  = "" [@@bs.module "fs"]
 
 external unlinkSync : string -> unit  = "" [@@bs.module "fs"]
